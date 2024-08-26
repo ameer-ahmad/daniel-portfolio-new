@@ -1,0 +1,417 @@
+
+@font-face {
+  font-family: 'PP Right Serif Mono Dark';
+  src: url('./fonts/PPRightSerifMono-Dark.woff2') format('woff2'),
+    url('./fonts/PPRightSerifMono-Dark.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Right Serif Mono';
+  src: url('./fonts/PPRightSerifMono-Regular.woff2') format('woff2'),
+    url('./fonts/PPRightSerifMono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Right Serif Mono';
+  src: url('./fonts/PPRightSerifMono-Bold.woff2') format('woff2'),
+    url('./fonts/PPRightSerifMono-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Right Serif Mono';
+  src: url('./fonts/PPRightSerifMono-Light.woff2') format('woff2'),
+    url('./fonts/PPRightSerifMono-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Right Serif Mono';
+  src: url('./fonts/PPRightSerifMono-Black.woff2') format('woff2'),
+    url('./fonts/PPRightSerifMono-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Right Serif Mono Fine';
+  src: url('./fonts/PPRightSerifMono-Fine.woff2') format('woff2'),
+    url('./fonts/PPRightSerifMono-Fine.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'BATMIP 1.41 Roman';
+    src: url('./fonts/BATMIP141-Roman.woff2') format('woff2'),
+        url('./fonts/BATMIP141-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BATMIP 1.41 Fraktur';
+    src: url('./fonts/BATMIP141-Fraktur.woff2') format('woff2'),
+        url('./fonts/BATMIP141-Fraktur.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BATMIP 1.41';
+    src: url('./fonts/BATMIP141-Italic.woff2') format('woff2'),
+        url('./fonts/BATMIP141-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BATMIP 1.41 Book';
+    src: url('./fonts/BATMIP141-Book.woff2') format('woff2'),
+        url('./fonts/BATMIP141-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  overflow: hidden;
+
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  &.about-open {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba($color: black, $alpha: 0.8);
+      transition: all 0.7s ease-in-out;
+    }
+  }
+
+  &.black {
+    background-color: black;
+    color: white;
+
+    @media screen and (max-width: 700px) {
+      background-color: white;
+      color: black;
+    }
+  }
+  &.white {
+    background-color: white;
+    color: black;
+  }
+.content {
+  overflow: hidden;
+  width: 100%;
+    height: 100%;
+    max-width: 1820px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 700px) {
+    overflow-y: auto;
+  }
+
+  .img-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+
+    @media screen and (max-width: 700px) {
+      height: auto;
+      top: 133px;
+
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      @media screen and (max-width: 700px) {
+        height: auto;
+      }
+    }
+
+    &.mobile-expanded {
+      position: relative;
+      top: 25px;
+        img {
+              transform: rotate(90deg) translate(0, calc(-100% - 2.5vw));
+              height: 95vw;
+              width: auto;
+              transform-origin: top left;
+              max-width: 500px;
+        }
+
+        .mobile {
+          position: absolute;
+          bottom: 0;
+          box-sizing: border-box;
+          width: 100%;
+        }
+    }
+
+    .mobile {
+      display: none;
+      padding: 15px 28px;
+
+      @media screen and (max-width: 700px) {
+        display: block;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+
+        svg {
+          cursor: pointer;
+        }
+      }
+
+      .desc {
+        margin-top: 45px;
+        font-family: 'PP Right Serif Mono';
+        font-size: 12px;
+        line-height: 18px;
+        ul {
+          margin-top: 10px;
+          margin-left: 0;
+          padding-left: 0;
+
+        li {
+          padding-left: 26px;
+          text-indent: -26px;
+
+          &::before {
+            content: "→";
+            padding-right: 20px;
+          }
+        }
+      }
+      }
+    }
+  }
+
+  .footer {
+    font-family: "BATMIP 1.41 Fraktur";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 2.5px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    max-width: 1820px;
+    z-index: 2;
+  }
+
+  .header {
+    font-family: "PP Right Serif Mono";
+    font-size: 13px;
+    line-height: 20px;
+    padding: 17px 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    z-index: 2;
+    position: relative;
+
+    .left {
+      display: flex;
+      max-width: 390px;
+      width: 100%;
+      justify-content: space-between;
+      @media screen and (max-width: 700px) {
+        max-width: none;
+      }
+
+      .about {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
+
+      ul {
+        max-width: 335px;
+        margin-left: 0;
+          padding-left: 0;
+
+        li {
+          padding-left: 1em;
+          text-indent: -1em;
+
+          &::before {
+            content: "→";
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .touch {
+    height: -webkit-fill-available;
+    display: flex;
+    z-index: 10;
+    position: relative;
+
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
+
+    .prev, .next {
+      flex: 1;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .about-drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 493px;
+    z-index: 0;
+    background-color: rgba($color: white, $alpha: 0.8);
+    opacity: 0;
+    padding: 17px 20px;
+    box-sizing: border-box;
+    font-family: 'PP Right Serif Mono';
+    font-size: 13px;
+    line-height: 20px;
+    display: hidden;
+    transition: opacity 0.7s ease-in-out;
+    color: black;
+
+    @media screen and (max-width: 700px) {
+      background-color: black;
+      color: white;
+    }
+
+    &.open {
+      opacity: 1;
+      display: block;
+      z-index: 1001;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 45px;
+      align-items: flex-start;
+
+      .close {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      color: black;
+    }
+
+    ul {
+        max-width: 335px;
+        margin-left: 78px;
+        padding-left: 0px;
+
+        li {
+          padding-left: 20px;
+          text-indent: -27px;
+
+          &::before {
+            content: "→";
+            padding-right: 20px;
+          }
+        }
+      }
+  }
+}
+}
