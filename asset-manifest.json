@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.80c0528b.css",
-    "main.js": "/static/js/main.2bac1d36.js",
+    "main.css": "/static/css/main.44849bc2.css",
+    "main.js": "/static/js/main.5aabc50d.js",
     "static/media/rangers-video.mp4": "/static/media/rangers-video.94e0cad30b47aab33c4f.mp4",
     "static/media/chineseposter.jpg": "/static/media/chineseposter.f2bca546f8da12296fe6.jpg",
     "static/media/circuit-posters.jpg": "/static/media/circuit-posters.58e95a8285b08c822424.jpg",
@@ -39,11 +39,11 @@
     "static/media/SourceSerifPro-BlackIt.woff2": "/static/media/SourceSerifPro-BlackIt.7616d02d066a65d2754f.woff2",
     "static/media/SourceSerifPro-ExtraLightIt.woff2": "/static/media/SourceSerifPro-ExtraLightIt.ec85e2e02919bd164286.woff2",
     "index.html": "/index.html",
-    "main.80c0528b.css.map": "/static/css/main.80c0528b.css.map",
-    "main.2bac1d36.js.map": "/static/js/main.2bac1d36.js.map"
+    "main.44849bc2.css.map": "/static/css/main.44849bc2.css.map",
+    "main.5aabc50d.js.map": "/static/js/main.5aabc50d.js.map"
   },
   "entrypoints": [
-    "static/css/main.80c0528b.css",
-    "static/js/main.2bac1d36.js"
+    "static/css/main.44849bc2.css",
+    "static/js/main.5aabc50d.js"
   ]
 }
