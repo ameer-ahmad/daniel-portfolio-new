@@ -16,6 +16,16 @@ function App() {
     setTimeout(() => setShowContent(true), 7000); // Delay for content to fade in after Text
   }, []);
 
+  const changeProject = (i) => {
+    const project = (typeof data[currentProject].video === 'undefined' ? document.getElementById('image') : document.getElementById('video'))
+    project.style.opacity = 0;
+
+    setTimeout(() => {
+      setCurrentProject(i)
+      project.style.opacity = 1;
+    }, 500)
+  }
+
   return (
     <div className='container'>
       <div className={`loading-screen ${showContent ? 'fade-out' : ''}`}>
@@ -64,7 +74,7 @@ function App() {
               data.map((project, i) => {
                 return (
                   <>
-                    <div className={`project ${currentProject === i ? 'active' : ''}`} key={project.id} onClick={() => setCurrentProject(project.id)}>
+                    <div className={`project ${currentProject === i ? 'active' : ''}`} key={project.id} onClick={() => changeProject(project.id)}>
                       <h2>{project.id < 9 ? `0${project.id + 1}` : project.id + 1}</h2>
                       <p>{project.title}</p>
                     </div>
@@ -80,7 +90,7 @@ function App() {
               data[currentProject].image ? (
                 <img id='image' src={data[currentProject].image} alt='' />
               ) : (
-                <video width="100%" height="80%" autoPlay>
+                <video id='video' width="100%" height="80%" autoPlay>
                   <source src={data[currentProject].video} type='video/mp4' />
                 </video>
               )
