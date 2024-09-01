@@ -8,7 +8,7 @@ import chinesePoster from './images/chineseposter.jpg'
 import threeDType from './images/3d-type.jpg'
 import reconfigType from './images/reconfig-type.jpg'
 import typeSpecimen from './images/typespecimen.jpg'
-import SOPosterWhite from './images/SO-poster-white.jpg'
+import SOPoster from './images/so-poster.jpg'
 import rangersVideo from './images/rangers-video.mp4'
 
 
@@ -90,7 +90,7 @@ const data = [
             "Blender 3D",
         ],
         image: threeDType,
-         bg: "black",
+         bg: "white",
     },
     {
         id: 8,
@@ -126,8 +126,8 @@ const data = [
         desc: [
             "letterforms created through analog texture experimentations with liquids and ice",
         ],
-        image: SOPosterWhite,
-        bg: "white",
+        image: SOPoster,
+        bg: "black",
     },
 ];
 
