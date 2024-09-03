@@ -160,7 +160,9 @@ body {
 
 .container {
   width: 100vw;
+  height: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   position: relative;
 
@@ -405,7 +407,13 @@ body {
       transition: height 0.5s ease-in-out;
 
       &.open {
+        height: calc(100% - 57px);
         height: calc(100vh - 57px);
+        height: calc(100dvh - 57px);
+
+        .index {
+          overflow-y: auto;
+        }
       }
 
       
@@ -418,7 +426,9 @@ body {
       }
 
       .about, .index {
+        height: calc(100% - 57px);
         height: calc(100vh - 57px);
+        height: calc(100dvh - 57px);
         padding: 17px 20px;
         font-family: 'Source Serif Pro';
         font-size: 14px;
@@ -471,7 +481,6 @@ body {
       }
 
       .index {
-        overflow-y: auto;
         .project {
           color: rgba($color: #000000, $alpha: 0.45);
           transition: color 0.3s ease-in-out;
@@ -506,7 +515,6 @@ body {
       width: 100%;
       border-top: 1px solid black;
       background-color: #E7EBEB;
-      display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 28px;
