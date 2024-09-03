@@ -411,7 +411,7 @@ body {
         height: calc(100vh - 57px);
         height: calc(100dvh - 57px);
 
-        .index {
+        .index, .about {
           overflow-y: auto;
         }
       }
