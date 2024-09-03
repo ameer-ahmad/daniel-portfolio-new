@@ -11,6 +11,7 @@ function App() {
   const [showContent, setShowContent] = useState(false);
   const [aboutIsOpen, setAboutIsOpen] = useState(false);
   const [indexIsOpen, setIndexIsOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setShowGif(true), 500); // Delay for GIF to fade in
@@ -41,6 +42,30 @@ function App() {
       changeProject(data.length - 1)
     } else {
       changeProject( currentProject - 1)
+    }
+  }
+
+  const handleScroll = async (e) => {
+    if (!isScrolling) {
+      setIsScrolling(true);
+
+      if (e.deltaY > 0 ) {
+        if (currentProject === data.length - 1) {
+          changeProject(0)
+        } else {
+          changeProject(currentProject + 1)
+        }
+      } else if (e.deltaY < 0) {
+        if (currentProject === 0) {
+          changeProject(data.length - 1)
+        } else {
+          changeProject(currentProject - 1)
+        }
+      }
+
+      setTimeout(() => {
+        setIsScrolling(false);
+      }, 300)
     }
   }
 
@@ -108,11 +133,11 @@ function App() {
               <span className="toggle">
                 {!aboutIsOpen ? (
                   <svg onClick={() => {setAboutIsOpen(true); setIndexIsOpen(false)} } xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                    <path d="M12.5001 12.5H1.5M12.5001 12.5V1.5M12.5001 12.5V23.5M12.5001 12.5H23.5" stroke="black" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    <path d="M12.5001 12.5H1.5M12.5001 12.5V1.5M12.5001 12.5V23.5M12.5001 12.5H23.5" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
                   </svg>
                 ) : (
                   <svg onClick={() => setAboutIsOpen(false) } xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                    <path d="M12.5 12.5L4.00003 22M12.5 12.5L4.00003 3M12.5 12.5L21 22M12.5 12.5L21 3" stroke="black" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    <path d="M12.5 12.5L4.00003 22M12.5 12.5L4.00003 3M12.5 12.5L21 22M12.5 12.5L21 3" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
                   </svg>
                 )}
               </span>
@@ -148,11 +173,11 @@ function App() {
           <span className="toggle">
                 {!indexIsOpen ? (
                   <svg onClick={() => {setIndexIsOpen(true); setAboutIsOpen(false)} } xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                    <path d="M12.5001 12.5H1.5M12.5001 12.5V1.5M12.5001 12.5V23.5M12.5001 12.5H23.5" stroke="black" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    <path d="M12.5001 12.5H1.5M12.5001 12.5V1.5M12.5001 12.5V23.5M12.5001 12.5H23.5" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
                   </svg>
                 ) : (
                   <svg onClick={() => setIndexIsOpen(false) } xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                    <path d="M12.5 12.5L4.00003 22M12.5 12.5L4.00003 3M12.5 12.5L21 22M12.5 12.5L21 3" stroke="black" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    <path d="M12.5 12.5L4.00003 22M12.5 12.5L4.00003 3M12.5 12.5L21 22M12.5 12.5L21 3" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
                   </svg>
                 )}
               </span>
@@ -176,7 +201,7 @@ function App() {
         </div>
         </div>
         
-        <div className={`img-container ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
+        <div onWheel={handleScroll} className={`img-container ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
             {
               data[currentProject].image ? (
                 <img id='image' src={data[currentProject].image} alt='' />
