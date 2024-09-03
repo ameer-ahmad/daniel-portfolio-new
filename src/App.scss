@@ -224,6 +224,11 @@ body {
     left: 0;
     display: flex;
 
+    @media screen and (max-width: 750px) {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     .drawer {
       width: 162px;
       overflow: hidden;
@@ -233,16 +238,25 @@ body {
       box-sizing: border-box;
       overflow-y: auto;
 
+      @media screen and (max-width: 750px) {
+        display: none;
+      }
+
       &::-webkit-scrollbar {
         display: none;
       }
 
       &:hover {
-        width: 346px;
-        
+        width: 346px;  
+      }
+
+      &:first-of-type {
+        &:hover {
+          width: 447px;
+        }
       }
       .about, .index {
-        width: 346px;
+        width: 447px;
         padding: 17px 20px;
         font-family: 'Source Serif Pro';
         font-size: 14px;
@@ -255,21 +269,65 @@ body {
 
         a {
           color: black;
+          text-decoration: none;
+          border-bottom: 1px solid black;
+          padding-bottom: 0px;
+
+          &:hover {
+             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='black' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+              background-position: bottom;
+              background-repeat: repeat-x;
+              background-size: 20%;
+              border-bottom: 0;
+              text-decoration: none;
+          }
         }
+
+        ul {
+          margin-top: 10px;
+          margin-left: 40px;
+          padding-left: 0;
+
+        li {
+          padding-left: 26px;
+          text-indent: -26px;
+
+          &::before {
+            content: "→";
+            padding-right: 20px;
+          }
+
+          &.school {
+            color: rgba($color: #000000, $alpha: 0.45);
+          }
+        }
+      }
       }
 
       .index {
         overflow-y: auto;
+        width: 346px;
         .project {
           color: rgba($color: #000000, $alpha: 0.45);
+          transition: color 0.3s ease-in-out;
 
           &.active {
             color: black;
           }
 
           &:hover {
-            color: black;
             cursor: pointer;
+
+            h2 {
+              color: black;
+              transition: color 0.3s ease-in-out;
+            }
+          }
+
+          p {
+            span {
+              font-style: italic;
+            }
           }
         }
         
@@ -280,9 +338,16 @@ body {
       width: calc(100vw - 324px);
       overflow: hidden;
       display: flex;
+      transition: background-color 0.5s ease-in-out;
+      background-color: white;
+
+      @media screen and (max-width: 750px) {
+        width: 100vw;
+      }
 
       &.black {
         background-color:black;
+        transition: background-color 0.5s ease-in-out;
       }
 
       video {
@@ -296,6 +361,12 @@ body {
         transform: translateX(-50%);
         margin-left: 50%;
         transition: opacity 0.5s ease-in-out;
+
+        @media screen and (max-width: 750px) {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
       }
 
       .number {
@@ -307,9 +378,155 @@ body {
         line-height: 20px;
         font-weight: 700;
 
+        @media screen and (max-width: 750px){
+          display: none;
+        }
+
         &.black {
           color: white;
         }
+      }
+    }
+    .mobile {
+      display: none;
+
+      @media  screen and (max-width:750px){
+        display: block;
+      }
+    }
+
+    .mobile-drawer {
+      width: 100%;
+      height: 57px;
+      overflow: hidden;
+      background-color: #E7EBEB;
+      border-bottom: 1px solid black;
+      position: relative;
+      transition: height 0.5s ease-in-out;
+
+      &.open {
+        height: calc(100vh - 57px);
+      }
+
+      
+
+      .toggle {
+        position: absolute;
+        top: 15px;
+        right: 27px;
+        cursor: pointer;
+      }
+
+      .about, .index {
+        height: calc(100vh - 57px);
+        padding: 17px 20px;
+        font-family: 'Source Serif Pro';
+        font-size: 14px;
+        line-height: 20px;
+        box-sizing: border-box;
+        &::-webkit-scrollbar {
+        display: none;
+      }
+        
+
+        h2 {
+          font-weight: 700;
+        }
+
+        a {
+          color: black;
+          text-decoration: none;
+          border-bottom: 1px solid black;
+          padding-bottom: 0px;
+
+          &:hover {
+             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='black' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+              background-position: bottom;
+              background-repeat: repeat-x;
+              background-size: 20%;
+              border-bottom: 0;
+              text-decoration: none;
+          }
+        }
+
+        ul {
+          margin-top: 10px;
+          margin-left: 40px;
+          padding-left: 0;
+
+        li {
+          padding-left: 26px;
+          text-indent: -26px;
+
+          &::before {
+            content: "→";
+            padding-right: 20px;
+          }
+
+          &.school {
+            color: rgba($color: #000000, $alpha: 0.45);
+          }
+        }
+      }
+      }
+
+      .index {
+        overflow-y: auto;
+        .project {
+          color: rgba($color: #000000, $alpha: 0.45);
+          transition: color 0.3s ease-in-out;
+
+          &.active {
+            color: black;
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            h2 {
+              color: black;
+              transition: color 0.3s ease-in-out;
+            }
+          }
+
+          p {
+            span {
+              font-style: italic;
+            }
+          }
+        }
+        
+      }
+
+    }
+
+    .footer {
+      display: none;
+      height: 57px;
+      width: 100%;
+      border-top: 1px solid black;
+      background-color: #E7EBEB;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      box-sizing: border-box;
+
+      svg {
+        cursor: pointer;
+      }
+
+      .number {
+        top: 17px;
+        right: 20px;
+        font-family: 'Source Serif Pro';
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+      }
+      
+      @media screen and (max-width: 750px) {
+        display: flex;
       }
     }
   }
