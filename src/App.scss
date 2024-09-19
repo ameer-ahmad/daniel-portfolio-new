@@ -343,6 +343,24 @@ body {
       display: flex;
       transition: background-color 0.5s ease-in-out;
       will-change: background-color;
+      position: relative;
+
+      .controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+
+        @media screen and (max-width: 750px) {
+          display: flex;
+        }
+
+        .left, .right {
+          width: 50%;
+        }
+      }
 
       #image {
         will-change: opacity;
@@ -353,11 +371,14 @@ body {
 
       #mobileImage {
         will-change: opacity;
+        height: 100%;
+        width: auto;
       }
 
       @media screen and (max-width: 750px) {
         height: 100%;
         width: auto;
+        max-width: 100vw;
       }
 
       &.black {
@@ -417,15 +438,21 @@ body {
       width: 100%;
       height: 57px;
       overflow: hidden;
-      background-color: #E7EBEB;
-      border-bottom: 1px solid black;
+      background-color: white;
       position: relative;
-      transition: height 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+
+      &.black {
+        background-color: black;
+        color: white;
+      }
 
       &.open {
-        height: calc(100% - 57px);
-        height: calc(100vh - 57px);
-        height: calc(100dvh - 57px);
+        height: calc(100%);
+        height: calc(100vh);
+        height: calc(100dvh);
+        background-color: #E7EBEB;
+        color: black;
 
         .index, .about {
           overflow-y: auto;
@@ -439,13 +466,22 @@ body {
         top: 15px;
         right: 27px;
         cursor: pointer;
+
+        .button {
+          cursor: pointer;
+          font-family: 'Source Serif Pro';
+          font-size: 14px;
+          position: fixed;
+          top: 25px;
+          right: 27px;
+        }
       }
 
       .about, .index {
         height: calc(100% - 57px);
         height: calc(100vh - 57px);
         height: calc(100dvh - 57px);
-        padding: 17px 20px;
+        padding: 25px 27px;
         font-family: 'Source Serif Pro';
         font-size: 14px;
         line-height: 20px;
@@ -524,14 +560,20 @@ body {
 
     .footer {
       display: none;
-      min-height: 57px;
       width: 100%;
-      border-top: 1px solid black;
-      background-color: #E7EBEB;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       justify-content: space-between;
       padding: 0 28px;
+      padding-bottom: 25px;
+      gap: 5px;
       box-sizing: border-box;
+      transition: all 0.5s ease-in-out;
+
+      &.black {
+        background-color: black;
+        color: white;
+      }
 
       svg {
         cursor: pointer;
@@ -545,6 +587,15 @@ body {
         line-height: 20px;
         font-weight: 700;
       }
+
+      p {
+        font-family: 'Source Serif Pro';
+        font-size: 14px;
+        line-height: 20px;
+            span {
+              font-style: normal;
+            }
+          }
       
       @media screen and (max-width: 750px) {
         display: flex;

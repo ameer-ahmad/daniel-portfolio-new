@@ -132,16 +132,12 @@ function App() {
           </div>
         </div>
         <div className="mobile">
-            <div className={`mobile-drawer ${aboutIsOpen ? 'open' : ''}`}>
+            <div className={`mobile-drawer ${aboutIsOpen ? 'open' : ''} ${data[currentProject].bg === 'black' ? 'black' : ''}`}>
               <span className="toggle">
                 {!aboutIsOpen ? (
-                  <svg onClick={() => {setAboutIsOpen(true); setIndexIsOpen(false)} } xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                    <path d="M12.5001 12.5H1.5M12.5001 12.5V1.5M12.5001 12.5V23.5M12.5001 12.5H23.5" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
-                  </svg>
+                  <span className='button' onClick={() => {setAboutIsOpen(true); setIndexIsOpen(false)} }>About</span>
                 ) : (
-                  <svg onClick={() => setAboutIsOpen(false) } xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                    <path d="M12.5 12.5L4.00003 22M12.5 12.5L4.00003 3M12.5 12.5L21 22M12.5 12.5L21 3" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
-                  </svg>
+                  <span className='button' onClick={() => setAboutIsOpen(false) }>Close</span>
                 )}
               </span>
           <div className="about">
@@ -171,7 +167,7 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className={`mobile-drawer ${indexIsOpen ? 'open' : ''}`}>
+        {/* <div className={`mobile-drawer ${indexIsOpen ? 'open' : ''}`}>
           <span className="toggle">
                 {!indexIsOpen ? (
                   <svg onClick={() => {setIndexIsOpen(true); setAboutIsOpen(false)} } xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -200,7 +196,7 @@ function App() {
               })
             }
           </div>
-        </div>
+        </div> */}
         </div>
         
         <div onWheel={handleScroll} className={`img-container ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
@@ -209,28 +205,28 @@ function App() {
                 <>
                   <img id='image' src={data[currentProject].image} alt='' />
                   <img id='mobileImage' src={data[currentProject].mobile} alt='' />
+                  
                 </>
               ) : (
-                <video id='video' width="100%" height="65%" autoPlay>
+                <video id='video' width="100%" height="65%" autoPlay loop muted webkit-playsinline playsinline>
                   <source src={data[currentProject].video} type='video/mp4' />
                 </video>
               )
             }
+            <div className='controls'>
+              <div className='left' onClick={prevProject}></div>
+              <div className='right' onClick={nextProject}></div>
+            </div>
             <span className={`number ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
               {data[currentProject].id < 9 ? `0${data[currentProject].id + 1}` : data[currentProject].id + 1}/{data.length}
             </span>
         </div>
 
-        <div className="footer">
-          <svg onClick={prevProject} xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="#000">
-            <path d="M1 12.5L10.8571 23M1 12.5L10.8571 2M1 12.5L24 12.5" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
-          </svg>
+        <div className={`footer ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
           <span className={`number ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
               {data[currentProject].id < 9 ? `0${data[currentProject].id + 1}` : data[currentProject].id + 1}/{data.length}
             </span>
-          <svg onClick={nextProject} xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="#000">
-            <path d="M24 12.5L14.1429 23M24 12.5L14.1429 2M24 12.5L0.999999 12.5" stroke="black" strokeLinecap="square" strokeLinejoin="bevel"/>
-          </svg>
+            <p>{data[currentProject].title} — <span>{data[currentProject].desc}</span></p>
         </div>
       </div>
     </div>
