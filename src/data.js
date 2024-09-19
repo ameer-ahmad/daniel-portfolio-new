@@ -9,6 +9,17 @@ import threeDType from './images/3d-type.jpg'
 import reconfigType from './images/reconfig-type.jpg'
 import typeSpecimen from './images/typespecimen.jpg'
 import SOPoster from './images/so-poster.jpg'
+import hongikPosterMobile from './images/hongik-poster-mobile.jpg'
+import circuitPostersMobile from './images/circuit-poster-mobile.jpg'
+import thesisBookCoversMobile from './images/analog-digital-mobile.jpg'
+import analogToDigital1Mobile from './images/analog-spread1-mobile.jpg'
+import analogToDigital2Mobile from './images/analog-spread2-mobile.jpg'
+import analogToDigital3Mobile from './images/analog-spread3-mobile.jpg'
+import chinesePosterMobile from './images/scroll-poster-mobile.jpg'
+import threeDTypeMobile from './images/3d-letters-mobile.jpg'
+import reconfigTypeMobile from './images/reconfigurable-mobile.jpg'
+import typeSpecimenMobile from './images/exran-mobile.jpg'
+import SOPosterMobile from './images/so-poster-mobile.jpg'
 import rangersVideo from './images/rangers-video.mp4'
 
 
@@ -18,6 +29,7 @@ const data = [
         title: "Exhibition poster",
         desc: "Pluriversal Typography in Local and Global Contexts",
         image: hongikPoster,
+        mobile: hongikPosterMobile,
         bg: "white",
     },
     {
@@ -25,6 +37,7 @@ const data = [
         title: "Double-sided poster",
         desc: "How can materiality/craft be applied to create type that challenges the ubiquitous nature of digital design?",
         image: circuitPosters,
+        mobile: circuitPostersMobile,
         bg: "white",
     },
     {
@@ -32,6 +45,7 @@ const data = [
         title: "Thesis book with works and essays",
         desc: "Analog to Digital, Design Thesis",
         image: thesisBookCovers,
+        mobile: thesisBookCoversMobile,
         bg: "black",
     },
     {
@@ -39,6 +53,7 @@ const data = [
         title: "Thesis book essay spreads",
         desc: "Analog to Digital, Design Thesis",
         image: analogToDigital1,
+        mobile: analogToDigital1Mobile,
          bg: "black",
     },
     {
@@ -46,6 +61,7 @@ const data = [
         title: "Thesis book content spreads",
         desc: "Analog to Digital, Design Thesis",
         image: analogToDigital2,
+        mobile: analogToDigital2Mobile,
          bg: "black",
     },
     {
@@ -53,6 +69,7 @@ const data = [
         title: "Thesis book finals spreads",
         desc: "Analog to Digital, Design Thesis",
         image: analogToDigital3,
+        mobile: analogToDigital3Mobile,
          bg: "black",
     },
     {
@@ -60,6 +77,7 @@ const data = [
         title: "Experimental long-format scroll poster",
         desc: "Analog to Digital, Design Thesis",
         image: chinesePoster,
+        mobile: chinesePosterMobile,
          bg: "black",
     },
     {
@@ -67,6 +85,7 @@ const data = [
         title: "Experiments with Digital Materiality",
         desc: "Analog to Digital, Design Thesis",
         image: threeDType,
+        mobile: threeDTypeMobile,
          bg: "white",
     },
     {
@@ -74,6 +93,7 @@ const data = [
         title: "A blueprint to physical making",
         desc: "Reconfigurable Typography A-Z",
         image: reconfigType,
+        mobile: reconfigTypeMobile,
          bg: "white",
     },
     {
@@ -88,6 +108,7 @@ const data = [
         title: "Type specimen for ongoing work-in-process display typeface",
         desc: "Exran Sans",
         image: typeSpecimen,
+        mobile: typeSpecimenMobile,
         bg: "black",
     },
     {
@@ -95,6 +116,7 @@ const data = [
         title: "Experimental poster",
         desc: "40th Science Olympiad at Michigan State University",
         image: SOPoster,
+        mobile: SOPosterMobile,
         bg: "black",
     },
 ];

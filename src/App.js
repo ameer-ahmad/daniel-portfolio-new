@@ -21,11 +21,14 @@ function App() {
 
   const changeProject = (i) => {
     const project = (typeof data[currentProject].video === 'undefined' ? document.getElementById('image') : document.getElementById('video'))
+    const mobileProject = (typeof data[currentProject].video === 'undefined' ? document.getElementById('mobileImage') : document.getElementById('video'))
     project.style.opacity = 0;
+    mobileProject.style.opacity = 0;
 
     setTimeout(() => {
       setCurrentProject(i)
       project.style.opacity = 1;
+      mobileProject.style.opacity = 1;
     }, 500)
   }
 
@@ -44,6 +47,7 @@ function App() {
       changeProject( currentProject - 1)
     }
   }
+
 
   const handleScroll = async (e) => {
     if (!isScrolling) {
@@ -94,7 +98,7 @@ function App() {
             <br />
             <br />
             <h2>
-              Site:
+              Additional
             </h2>
             <br />
             <p>Special thanks to <a href='https://ameerahmad.com' target='_blank' rel='noreferrer'>Ameer Ahmad</a>, for programming this website.
@@ -102,10 +106,9 @@ function App() {
             </p>
             <br />
             <ul>
-              <li><a href='a' target='_blank' rel='noreferrer'>Email</a></li>
-              <li><a href='a' target='_blank' rel='noreferrer'>Are.na</a></li>
-              <li><a href='a' target='_blank' rel='noreferrer'>Instagram</a></li>
-              <li><a href='a' target='_blank' rel='noreferrer'>Resume</a></li>
+              <li><a href='mailto:danielshui.des@gmail.com' target='_blank' rel='noreferrer'>Email</a></li>
+              <li><a href='https://www.are.na/daniel-shui-40niceg9sse/channels' target='_blank' rel='noreferrer'>Are.na</a></li>
+              <li><a href='https://www.instagram.com/daniel.shui/' target='_blank' rel='noreferrer'>Instagram</a></li>
             </ul>
           </div>
         </div>
@@ -116,13 +119,13 @@ function App() {
             {
               data.map((project, i) => {
                 return (
-                  <>
-                    <div className={`project ${currentProject === i ? 'active' : ''}`} key={project.id} onClick={() => changeProject(project.id)}>
+                  <div key={project.id}>
+                    <div className={`project ${currentProject === i ? 'active' : ''}`}  onClick={() => changeProject(project.id)}>
                       <h2>{project.id < 9 ? `0${project.id + 1}` : project.id + 1}</h2>
                       <p>{project.title} — <span>{project.desc}</span></p>
                     </div>
                     {i === data.length - 1 ? "" : (<br />)}
-                  </>
+                  </div>
                 )
               })
             }
@@ -154,7 +157,7 @@ function App() {
             <br />
             <br />
             <h2>
-              Site:
+              Additional
             </h2>
             <br />
             <p>Special thanks to <a href='https://ameerahmad.com' target='_blank' rel='noreferrer'>Ameer Ahmad</a>, for programming this website.
@@ -162,10 +165,9 @@ function App() {
             </p>
             <br />
             <ul>
-              <li><a href='a' target='_blank' rel='noreferrer'>Email</a></li>
-              <li><a href='a' target='_blank' rel='noreferrer'>Are.na</a></li>
-              <li><a href='a' target='_blank' rel='noreferrer'>Instagram</a></li>
-              <li><a href='a' target='_blank' rel='noreferrer'>Resume</a></li>
+              <li><a href='mailto:danielshui.des@gmail.com' target='_blank' rel='noreferrer'>Email</a></li>
+              <li><a href='https://www.are.na/daniel-shui-40niceg9sse/channels' target='_blank' rel='noreferrer'>Are.na</a></li>
+              <li><a href='https://www.instagram.com/daniel.shui/' target='_blank' rel='noreferrer'>Instagram</a></li>
             </ul>
           </div>
         </div>
@@ -187,13 +189,13 @@ function App() {
             {
               data.map((project, i) => {
                 return (
-                  <>
-                    <div className={`project ${currentProject === i ? 'active' : ''}`} key={project.id} onClick={() => {changeProject(project.id); setIndexIsOpen(false)}}>
+                  <div key={project.id}>
+                    <div className={`project ${currentProject === i ? 'active' : ''}`}  onClick={() => {changeProject(project.id); setIndexIsOpen(false)}}>
                       <h2>{project.id < 9 ? `0${project.id + 1}` : project.id + 1}</h2>
                       <p>{project.title} — <span>{project.desc}</span></p>
                     </div>
                     {i === data.length - 1 ? "" : (<br />)}
-                  </>
+                  </div>
                 )
               })
             }
@@ -204,7 +206,10 @@ function App() {
         <div onWheel={handleScroll} className={`img-container ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
             {
               data[currentProject].image ? (
-                <img id='image' src={data[currentProject].image} alt='' />
+                <>
+                  <img id='image' src={data[currentProject].image} alt='' />
+                  <img id='mobileImage' src={data[currentProject].mobile} alt='' />
+                </>
               ) : (
                 <video id='video' width="100%" height="65%" autoPlay>
                   <source src={data[currentProject].video} type='video/mp4' />

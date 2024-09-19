@@ -182,10 +182,15 @@ body {
 
     .gif-container {
       position: absolute;
-      top: calc(50% - 100px);
-      left: calc(50% - 100px);
+      top: calc(50% - 62.5px);
+      left: calc(50% - 62.5px);
       opacity: 0;
       transition: opacity 0.7s ease-in;
+
+      img {
+        width: 125px;
+        height: 125px;
+      }
 
       &.fade-in {
         opacity: 1;
@@ -286,22 +291,18 @@ body {
         }
 
         ul {
-          margin-top: 10px;
           margin-left: 40px;
           padding-left: 0;
 
         li {
           padding-left: 26px;
-          text-indent: -26px;
+          text-indent: -29px;
 
           &::before {
             content: "→";
             padding-right: 20px;
           }
 
-          &.school {
-            color: rgba($color: #000000, $alpha: 0.45);
-          }
         }
       }
       }
@@ -310,7 +311,7 @@ body {
         overflow-y: auto;
         width: 346px;
         .project {
-          color: rgba($color: #000000, $alpha: 0.45);
+          color: rgba($color: #000000, $alpha: 0.38);
           transition: color 0.3s ease-in-out;
 
           &.active {
@@ -341,20 +342,34 @@ body {
       overflow: hidden;
       display: flex;
       transition: background-color 0.5s ease-in-out;
-      background-color: white;
+      will-change: background-color;
+
+      #image {
+        will-change: opacity;
+        @media screen and (max-width: 750px) {
+          display: none;
+        }
+      }
+
+      #mobileImage {
+        will-change: opacity;
+      }
 
       @media screen and (max-width: 750px) {
-        width: 100vw;
+        height: 100%;
+        width: auto;
       }
 
       &.black {
-        background-color:black;
+        background-color: black;
+        will-change: background-color;
         transition: background-color 0.5s ease-in-out;
       }
 
       video {
         margin: auto 0;
         transition: opacity 0.5s ease-in-out;
+        will-change: opacity;
       }
 
       img {
@@ -363,6 +378,7 @@ body {
         transform: translateX(-50%);
         margin-left: 50%;
         transition: opacity 0.5s ease-in-out;
+        will-change: opacity;
 
         @media screen and (max-width: 750px) {
           width: 100%;
@@ -460,29 +476,26 @@ body {
         }
 
         ul {
-          margin-top: 10px;
           margin-left: 40px;
           padding-left: 0;
 
         li {
           padding-left: 26px;
-          text-indent: -26px;
+          text-indent: -29px;
 
           &::before {
             content: "→";
             padding-right: 20px;
           }
 
-          &.school {
-            color: rgba($color: #000000, $alpha: 0.45);
-          }
+
         }
       }
       }
 
       .index {
         .project {
-          color: rgba($color: #000000, $alpha: 0.45);
+          color: rgba($color: #000000, $alpha: 0.38);
           transition: color 0.3s ease-in-out;
 
           &.active {
