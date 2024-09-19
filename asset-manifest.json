@@ -1,16 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.506bca3f.css",
-    "main.js": "/static/js/main.95d77dfd.js",
+    "main.css": "/static/css/main.349c6541.css",
+    "main.js": "/static/js/main.40ebe080.js",
     "static/media/rangers-video.mp4": "/static/media/rangers-video.94e0cad30b47aab33c4f.mp4",
     "static/media/chineseposter.jpg": "/static/media/chineseposter.f2bca546f8da12296fe6.jpg",
+    "static/media/scroll-poster-mobile.jpg": "/static/media/scroll-poster-mobile.7477187bf1d7112fd203.jpg",
+    "static/media/circuit-poster-mobile.jpg": "/static/media/circuit-poster-mobile.7aa360a6fa6de2961f45.jpg",
+    "static/media/so-poster-mobile.jpg": "/static/media/so-poster-mobile.6e4b367734e0e2256dc8.jpg",
+    "static/media/analog-spread2-mobile.jpg": "/static/media/analog-spread2-mobile.5e8e9fcf7b00f05c78b4.jpg",
     "static/media/circuit-posters.jpg": "/static/media/circuit-posters.58e95a8285b08c822424.jpg",
+    "static/media/hongik-poster-mobile.jpg": "/static/media/hongik-poster-mobile.396ed2546103d28117e4.jpg",
+    "static/media/reconfigurable-mobile.jpg": "/static/media/reconfigurable-mobile.c5bd7a1d96f2054377ee.jpg",
+    "static/media/3d-letters-mobile.jpg": "/static/media/3d-letters-mobile.55c3fee84baf9452cd9b.jpg",
+    "static/media/analog-spread3-mobile.jpg": "/static/media/analog-spread3-mobile.fbe41faffed64d1db509.jpg",
+    "static/media/analog-spread1-mobile.jpg": "/static/media/analog-spread1-mobile.88437cbb61208d0c20c8.jpg",
+    "static/media/analog-digital-mobile.jpg": "/static/media/analog-digital-mobile.5eeddb94dcfcf5380d8e.jpg",
     "static/media/analog-to-digital-2.jpg": "/static/media/analog-to-digital-2.92be5231ff9747b7658c.jpg",
     "static/media/reconfig-type.jpg": "/static/media/reconfig-type.4942bcbc6ed93b98e964.jpg",
     "static/media/3d-type.jpg": "/static/media/3d-type.8d4eb32da0c5b1cb5e58.jpg",
     "static/media/thesis-book-covers.jpg": "/static/media/thesis-book-covers.4d549e0f40588214572a.jpg",
     "static/media/so-poster.jpg": "/static/media/so-poster.dd537f0a78895047c0c4.jpg",
     "static/media/analog-to-digital-1.jpg": "/static/media/analog-to-digital-1.5b75987bb21eba3132ed.jpg",
+    "static/media/exran-mobile.jpg": "/static/media/exran-mobile.140b71977b92c15d85dc.jpg",
     "static/media/analog-to-digital-3.jpg": "/static/media/analog-to-digital-3.980af69e5c64913b9766.jpg",
     "static/media/typespecimen.jpg": "/static/media/typespecimen.29d4593fc4ebba562bb8.jpg",
     "static/media/hongik-poster.jpg": "/static/media/hongik-poster.ad78d42b35298277ed1b.jpg",
@@ -39,11 +50,11 @@
     "static/media/SourceSerifPro-BlackIt.woff2": "/static/media/SourceSerifPro-BlackIt.7616d02d066a65d2754f.woff2",
     "static/media/SourceSerifPro-ExtraLightIt.woff2": "/static/media/SourceSerifPro-ExtraLightIt.ec85e2e02919bd164286.woff2",
     "index.html": "/index.html",
-    "main.506bca3f.css.map": "/static/css/main.506bca3f.css.map",
-    "main.95d77dfd.js.map": "/static/js/main.95d77dfd.js.map"
+    "main.349c6541.css.map": "/static/css/main.349c6541.css.map",
+    "main.40ebe080.js.map": "/static/js/main.40ebe080.js.map"
   },
   "entrypoints": [
-    "static/css/main.506bca3f.css",
-    "static/js/main.95d77dfd.js"
+    "static/css/main.349c6541.css",
+    "static/js/main.40ebe080.js"
   ]
 }
