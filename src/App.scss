@@ -155,7 +155,7 @@ table {
 
 body {
   overflow: hidden;
-
+  color: #716459;
 }
 
 .container {
@@ -214,8 +214,10 @@ body {
       h1 {
         font-family: 'Source Serif Pro';
         font-size: 14px;
-        font-weight: 700;
         line-height: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
       }
 
       &.fade-in {
@@ -271,17 +273,19 @@ body {
         box-sizing: border-box;
 
         h2 {
-          font-weight: 700;
+          font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
         }
 
         a {
-          color: black;
+          color: #716459;
           text-decoration: none;
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid #716459;
           padding-bottom: 0px;
 
           &:hover {
-             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='black' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='#716459;' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
               background-position: bottom;
               background-repeat: repeat-x;
               background-size: 20px;
@@ -311,18 +315,18 @@ body {
         overflow-y: auto;
         width: 346px;
         .project {
-          color: rgba($color: #000000, $alpha: 0.38);
+          color: rgba(#716459, 0.38);
           transition: color 0.3s ease-in-out;
 
           &.active {
-            color: black;
+            color: #716459;
           }
 
           &:hover {
             cursor: pointer;
 
             h2 {
-              color: black;
+              color: #716459;
               transition: color 0.3s ease-in-out;
             }
           }
@@ -415,7 +419,9 @@ body {
         font-family: 'Source Serif Pro';
         font-size: 14px;
         line-height: 20px;
-        font-weight: 700;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
 
         @media screen and (max-width: 750px){
           display: none;
@@ -452,7 +458,7 @@ body {
         height: calc(100vh);
         height: calc(100dvh);
         background-color: #E7EBEB;
-        color: black;
+        color: #716459;
 
         .index, .about {
           overflow-y: auto;
@@ -492,17 +498,19 @@ body {
         
 
         h2 {
-          font-weight: 700;
+          font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
         }
 
         a {
-          color: black;
+          color: #716459;
           text-decoration: none;
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid #716459;
           padding-bottom: 0px;
 
           &:hover {
-             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='black' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='#716459' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
               background-position: bottom;
               background-repeat: repeat-x;
               background-size: 20px;
@@ -531,18 +539,18 @@ body {
 
       .index {
         .project {
-          color: rgba($color: #000000, $alpha: 0.38);
+          color: rgba(#716459, 0.38);
           transition: color 0.3s ease-in-out;
 
           &.active {
-            color: black;
+            color: #716459;
           }
 
           &:hover {
             cursor: pointer;
 
             h2 {
-              color: black;
+              color: #716459;
               transition: color 0.3s ease-in-out;
             }
           }
@@ -585,7 +593,9 @@ body {
         font-family: 'Source Serif Pro';
         font-size: 14px;
         line-height: 20px;
-        font-weight: 700;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
       }
 
       p {

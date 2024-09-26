@@ -125,7 +125,6 @@ function App() {
               <li className='school'>2024, Bachelor of Design with distinction, Ontario College of Arts and Design University</li>
             </ul>
             <br />
-            <br />
             <h2>
               Additional
             </h2>
@@ -179,7 +178,6 @@ function App() {
             <ul>
               <li className='school'>2024, Bachelor of Design with distinction, Ontario College of Arts and Design University</li>
             </ul>
-            <br />
             <br />
             <h2>
               Additional
