@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.939cee9a.css",
-    "main.js": "/static/js/main.085d0d93.js",
+    "main.js": "/static/js/main.91257518.js",
     "static/media/rangers-video.mp4": "/static/media/rangers-video.94e0cad30b47aab33c4f.mp4",
     "static/media/chineseposter.jpg": "/static/media/chineseposter.f2bca546f8da12296fe6.jpg",
     "static/media/scroll-poster-mobile.jpg": "/static/media/scroll-poster-mobile.7477187bf1d7112fd203.jpg",
@@ -51,10 +51,10 @@
     "static/media/SourceSerifPro-ExtraLightIt.woff2": "/static/media/SourceSerifPro-ExtraLightIt.ec85e2e02919bd164286.woff2",
     "index.html": "/index.html",
     "main.939cee9a.css.map": "/static/css/main.939cee9a.css.map",
-    "main.085d0d93.js.map": "/static/js/main.085d0d93.js.map"
+    "main.91257518.js.map": "/static/js/main.91257518.js.map"
   },
   "entrypoints": [
     "static/css/main.939cee9a.css",
-    "static/js/main.085d0d93.js"
+    "static/js/main.91257518.js"
   ]
 }
