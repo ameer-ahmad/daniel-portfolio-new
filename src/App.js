@@ -48,8 +48,15 @@ function App() {
     }
   }
 
+  let lastScrollTime = 0;
 
   const handleScroll = async (e) => {
+
+    const currentTime = new Date().getTime();
+
+    if (currentTime - lastScrollTime < 300) return;
+    lastScrollTime = currentTime;
+
     if (!isScrolling) {
       setIsScrolling(true);
 
