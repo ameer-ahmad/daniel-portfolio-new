@@ -96,7 +96,7 @@ function App() {
     // }
   }
 
-  const debouncedOnWheel = rateLimit(handleScroll, 100);
+  const debouncedOnWheel = rateLimit(handleScroll, 400);
 
   return (
     <div className='container'>
