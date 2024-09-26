@@ -20,9 +20,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.getElementById('projects').addEventListener('wheel', handleScroll);
+    document.getElementById('projects').addEventListener('wheel', debouncedOnWheel);
   return () => {
-    document.getElementById('projects').removeEventListener('wheel', handleScroll);
+    document.getElementById('projects').removeEventListener('wheel', debouncedOnWheel);
   };
   }, [currentProject, isScrolling])
 
@@ -55,14 +55,23 @@ function App() {
     }
   }
 
-  let lastScrollTime = 0;
+  const rateLimit = (func, time) => {
+    var callback = func,
+                waiting = false,
+                context = this;
+        var rtn = function(){
+            if(waiting) return;
+            waiting = true;
+            var args = arguments;
+            setTimeout(function(){
+                waiting = false;
+                callback.apply(context, args);
+            }, time);
+        };
+        return rtn;
+  }
 
   const handleScroll = async (e) => {
-
-    const currentTime = new Date().getTime();
-
-    if (currentTime - lastScrollTime < 300) return;
-    lastScrollTime = currentTime;
 
     if (!isScrolling) {
       setIsScrolling(true);
@@ -86,6 +95,8 @@ function App() {
       }, 300)
     }
   }
+
+  const debouncedOnWheel = rateLimit(handleScroll, 100);
 
   return (
     <div className='container'>
