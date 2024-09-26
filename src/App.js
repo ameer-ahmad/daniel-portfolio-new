@@ -12,13 +12,19 @@ function App() {
   const [aboutIsOpen, setAboutIsOpen] = useState(false);
   const [indexIsOpen, setIndexIsOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
-  const []
 
   useEffect(() => {
     setTimeout(() => setShowGif(true), 500); // Delay for GIF to fade in
     setTimeout(() => setShowText(true), 4000); // Delay for Text to fade in after GIF
     setTimeout(() => setShowContent(true), 7000); // Delay for content to fade in after Text
   }, []);
+
+  useEffect(() => {
+    document.getElementById('projects').addEventListener('wheel', handleScroll);
+  return () => {
+    document.getElementById('projects').removeEventListener('wheel', handleScroll);
+  };
+  }, [currentProject, isScrolling])
 
   const changeProject = (i) => {
     const project = (typeof data[currentProject].video === 'undefined' ? document.getElementById('image') : document.getElementById('video'))
@@ -207,7 +213,7 @@ function App() {
         </div> */}
         </div>
         
-        <div onWheel={handleScroll} className={`img-container ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
+        <div id='projects' className={`img-container ${data[currentProject].bg === 'black' ? 'black' : 'white'}`}>
             {
               data[currentProject].image ? (
                 <>
