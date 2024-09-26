@@ -12,6 +12,7 @@ function App() {
   const [aboutIsOpen, setAboutIsOpen] = useState(false);
   const [indexIsOpen, setIndexIsOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
+  const []
 
   useEffect(() => {
     setTimeout(() => setShowGif(true), 500); // Delay for GIF to fade in
@@ -59,7 +60,7 @@ function App() {
 
     if (!isScrolling) {
       setIsScrolling(true);
-
+      console.log(e)
       if (e.deltaY > 0 ) {
         if (currentProject === data.length - 1) {
           changeProject(0)
