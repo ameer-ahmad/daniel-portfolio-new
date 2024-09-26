@@ -73,8 +73,8 @@ function App() {
 
   const handleScroll = async (e) => {
 
-    if (!isScrolling) {
-      setIsScrolling(true);
+    // if (!isScrolling) {
+    //   setIsScrolling(true);
       console.log(e)
       if (e.deltaY > 0 ) {
         if (currentProject === data.length - 1) {
@@ -90,10 +90,10 @@ function App() {
         }
       }
 
-      setTimeout(() => {
-        setIsScrolling(false);
-      }, 300)
-    }
+    //   setTimeout(() => {
+    //     setIsScrolling(false);
+    //   }, 300)
+    // }
   }
 
   const debouncedOnWheel = rateLimit(handleScroll, 100);
