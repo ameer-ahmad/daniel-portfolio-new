@@ -75,18 +75,22 @@ function App() {
 
     // if (!isScrolling) {
     //   setIsScrolling(true);
-      console.log(e)
+      
       if (e.deltaY > 40 ) {
         if (currentProject === data.length - 1) {
           changeProject(0)
+          console.log("changing")
         } else {
           changeProject(currentProject + 1)
+          console.log("changing")
         }
       } else if (e.deltaY < -40) {
         if (currentProject === 0) {
           changeProject(data.length - 1)
+          console.log("changing")
         } else {
           changeProject(currentProject - 1)
+          console.log("changing")
         }
       }
 
